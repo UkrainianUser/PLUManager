@@ -1,21 +1,21 @@
 import PropTypes from "prop-types";
 import { PluCard } from "../PluCard/PluCard";
-import css from "./PluList.module.css";
+import { List } from "./PluList.styled";
 
 export const PluList = ({ items }) => {
   return (
-    <ul className={css.pluList}>
-      {items.map(({ _id, article, name, PLU }) => (
-        <PluCard key={_id} article={article} name={name} PLU={PLU}></PluCard>
+    <List>
+      {items.map(({ _id, articule, name, PLU }) => (
+        <PluCard key={_id} articule={articule} name={name} PLU={PLU}></PluCard>
       ))}
-    </ul>
+    </List>
   );
 };
 
 PluList.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.exact({
-      article: PropTypes.string.isRequired,
+      articule: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       PLU: PropTypes.string.isRequired,
     })

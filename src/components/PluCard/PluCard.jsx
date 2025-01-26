@@ -1,18 +1,22 @@
 import PropTypes from "prop-types";
-import css from "./PluCard.module.css";
+import { GiWeight } from "react-icons/gi";
+import { Articule, Card, Name, Plu } from "./PluCard.styled";
 
-export const PluCard = ({ article, name, PLU }) => {
+export const PluCard = ({ articule, name, PLU }) => {
   return (
-    <li className={css.item}>
-      <span className={css.itemArticle}>{article}</span>
-      <span className={css.itemName}>{name}</span>
-      <span className={css.itemPlu}>PLU: {PLU}</span>
-    </li>
+    <Card>
+      <Articule>{articule}</Articule>
+      <Name>{name}</Name>
+      <Plu>
+        <GiWeight />
+        PLU: {PLU}
+      </Plu>
+    </Card>
   );
 };
 
 PluCard.propTypes = {
-  article: PropTypes.string.isRequired,
+  articule: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   PLU: PropTypes.string.isRequired,
 };
