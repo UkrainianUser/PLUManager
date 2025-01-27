@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { GiWeight } from "react-icons/gi";
 import { Articule, Card, Name, Plu } from "./PluCard.styled";
 
-export const PluCard = ({ articule, name, PLU }) => {
+const PluCard = ({ articule, name, PLU }) => {
   return (
     <Card>
       <Articule>{articule}</Articule>
@@ -20,3 +20,5 @@ PluCard.propTypes = {
   name: PropTypes.string.isRequired,
   PLU: PropTypes.string.isRequired,
 };
+
+export default PluCard;

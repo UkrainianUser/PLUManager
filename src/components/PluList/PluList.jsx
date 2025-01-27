@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
-import { PluCard } from "../PluCard/PluCard";
+import PluCard from "../PluCard";
 import { List } from "./PluList.styled";
 
-export const PluList = ({ items }) => {
+const PluList = ({ items }) => {
   return (
     <List>
       {items.map(({ _id, articule, name, PLU }) => (
@@ -21,3 +21,5 @@ PluList.propTypes = {
     })
   ),
 };
+
+export default PluList;
