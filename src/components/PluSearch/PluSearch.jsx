@@ -1,7 +1,31 @@
+import { useEffect, useState } from "react";
 import { SearchInput } from "./PluSearch.styled";
+import { filterPlus } from "../../utils/filterPlus";
 
-const PluSearch = () => {
-  return <SearchInput />;
+const PluSearch = ({ data, onFilter, fields, inputType, inputPlaceholder }) => {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    const debounce = setTimeout(() => {
+      const filteredPlus = filterPlus(searchTerm, data, fields);
+      onFilter(filteredPlus);
+    }, 300);
+
+    return () => clearTimeout(debounce);
+  }, [searchTerm, data, onFilter, fields]);
+
+  return (
+    <div>
+      <SearchInput
+        value={searchTerm}
+        autoFocus
+        type={inputType}
+        autoComplete="off"
+        placeholder={inputPlaceholder}
+        onChange={(evt) => setSearchTerm(evt.target.value)}
+      />
+    </div>
+  );
 };
 
 export default PluSearch;
