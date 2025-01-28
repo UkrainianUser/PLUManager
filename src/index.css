@@ -9,9 +9,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   background: linear-gradient(
-    65deg,
-    rgba(227, 184, 42, 1) 50%,
-    rgba(232, 103, 74, 1) 100%
+    280deg,
+    rgb(235 200 80) 50%,
+    rgb(155 100 90) 100%
   );
 }
 

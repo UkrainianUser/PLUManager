@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { SearchInput } from "./PluSearch.styled";
+import { SearchInput, InputWrapper } from "./PluSearch.styled";
 import { filterPlus } from "../../utils/filterPlus";
 
 const PluSearch = ({ data, onFilter, fields, inputType, inputPlaceholder }) => {
@@ -15,7 +15,7 @@ const PluSearch = ({ data, onFilter, fields, inputType, inputPlaceholder }) => {
   }, [searchTerm, data, onFilter, fields]);
 
   return (
-    <div>
+    <InputWrapper>
       <SearchInput
         value={searchTerm}
         autoFocus
@@ -24,7 +24,7 @@ const PluSearch = ({ data, onFilter, fields, inputType, inputPlaceholder }) => {
         placeholder={inputPlaceholder}
         onChange={(evt) => setSearchTerm(evt.target.value)}
       />
-    </div>
+    </InputWrapper>
   );
 };
 

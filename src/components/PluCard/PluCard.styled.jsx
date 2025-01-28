@@ -25,6 +25,6 @@ export const Plu = styled.span`
 
   svg {
     margin-right: 8px;
-    color: rgb(201, 70, 70);
+    color: rgb(130 80 40);
   }
 `;
