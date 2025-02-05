@@ -4,10 +4,14 @@ import { Container, SearchWrapper } from "./App.styled";
 
 import data from "../../data/data.json";
 import PluSearch from "../PluSearch/PluSearch";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 export const App = () => {
   const [filteredData, setFilteredData] = useState(data);
+
+  const handleFilter = useCallback((filteredPlus) => {
+    setFilteredData(filteredPlus);
+  }, []);
 
   return (
     <Container>
@@ -15,14 +19,14 @@ export const App = () => {
       <SearchWrapper>
         <PluSearch
           data={data}
-          onFilter={setFilteredData}
+          onFilter={handleFilter}
           fields={["articule", "name"]}
           inputType="text"
           inputPlaceholder="Введіть назву або артикул"
         />
         <PluSearch
           data={data}
-          onFilter={setFilteredData}
+          onFilter={handleFilter}
           fields={["PLU"]}
           inputType="tel"
           inputPlaceholder="Введіть PLU товару"

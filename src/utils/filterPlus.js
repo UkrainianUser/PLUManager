@@ -3,10 +3,8 @@ export const filterPlus = (searchText, listOfPlus, fields) => {
     return listOfPlus;
   }
   return listOfPlus.filter((item) =>
-    fields.some(
-      (field) =>
-        item[field] &&
-        item[field].toLowerCase().includes(searchText.toLowerCase())
+    fields.some((field) =>
+      item[field].toLowerCase().includes(searchText.toLowerCase())
     )
   );
 };

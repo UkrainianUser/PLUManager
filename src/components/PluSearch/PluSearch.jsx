@@ -6,6 +6,7 @@ const PluSearch = ({ data, onFilter, fields, inputType, inputPlaceholder }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
+    // console.log("Search term:", searchTerm);
     const debounce = setTimeout(() => {
       const filteredPlus = filterPlus(searchTerm, data, fields);
       onFilter(filteredPlus);
