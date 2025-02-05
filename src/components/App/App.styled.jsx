@@ -4,6 +4,7 @@ export const Container = styled.div`
   max-width: 420px;
   margin: 0 auto;
   padding: 0 12px;
+  height: 100vh;
 `;
 
 export const SearchWrapper = styled.div`
