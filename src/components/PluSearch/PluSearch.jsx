@@ -13,7 +13,7 @@ const PluSearch = ({ data, onFilter, fields, inputType, inputPlaceholder }) => {
     }, 300);
 
     return () => clearTimeout(debounce);
-  }, [searchTerm, data, onFilter, fields]);
+  }, [searchTerm]);
 
   return (
     <InputWrapper>
